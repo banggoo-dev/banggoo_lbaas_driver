@@ -10,7 +10,7 @@ This guide is for the Banggoo LBaaS Driver, which is specifically designed to ma
 
 In this installation guide, we will introduce installation caveat and configuration method. In the end, method about how to check the installation is correct will be listed. Expectedly, an updated community-supported driver will be in the Juno release of OpenStack. We will promptly update our drivers.
 
-  > The latest version of this document can be found at https://github.com/banggoo-dev/banggoo_lbaas_driver/README.md
+  > The latest version of this document can be found at https://github.com/banggoo-dev/banggoo_lbaas_driver
 
 
 ## Installation steps:
@@ -36,9 +36,10 @@ The relative path is neutron/services/loadbalancer/drivers/.
 ![image2](https://cloud.githubusercontent.com/assets/15115131/10474138/9c60d92e-7265-11e5-84b4-c3f595c881ff.png)
 
 If the operating system is Centos7, absolute path is typically /usr/lib/python2.7/site-packages/neutron/services/loadbalancer/drivers/.
+
 If the operating system is Centos6, absolute path is typically /usr/lib/python2.6/site-packages/neutron/services/loadbalancer/drivers/.
 
-#### Refer to the installation script:
+#### Installation script:
 
 ```
 NEUTRON_IMPORT=` printf "import neutron\nprint neutron.__file__\n" | python`
@@ -62,8 +63,8 @@ Modify `/etc/openstack-dashboard/local_settings`
 ```
 OPENSTACK_NEUTRON_NETWORK = { 
         …
-                'enable_lb': True,
-            }
+        'enable_lb': True,
+    }
 ```
 
 
@@ -100,7 +101,7 @@ Modify `/etc/neutron/lbaas_agent.ini`
 
 ```
 [DEFAULT] 
-…
+ …
 interface_driver = neutron.agent.linux.interface.OVSInterfaceDriver
 ```
 
